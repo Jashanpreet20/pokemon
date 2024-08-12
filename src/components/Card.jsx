@@ -2,7 +2,8 @@ import React from "react";
 
 export default function Card({ pokemonData }) {
   return (
-    <div className="w-full h-full flex flex-col items-start justify-between rounded-md  px-2 py-2 bg-lime-400 hover:scale-105 duration-200 transition-all">
+    <div className="w-full h-full flex flex-col items-start justify-between  px-2 py-2 bg-gray-800
+     text-white p-6 rounded-lg shadow-lg hover:scale-105 duration-200 transition-all">
       <div className="flex items-center justify-center w-full ">
         <img
           className="w-[100px] h-[100px] mt-2"
@@ -12,7 +13,7 @@ export default function Card({ pokemonData }) {
       </div>
 
       <div className="flex flex-col justify-center items-center  w-full">
-        <h1 className="text-xl text-black ">{pokemonData.name}</h1>
+        <h1 className="text-xl ">{pokemonData.name}</h1>
         <p className="bg-green-500 capitalize px-2 py-1 mt-2 rounded-md text-center">
           {pokemonData.types.map((currtype) => currtype.type.name).join(", ")}
         </p>
@@ -21,19 +22,19 @@ export default function Card({ pokemonData }) {
         <div className="flex items-center justify-between w-full gap-x-3 px-2 py-1 mx-auto">
           <div className="flex items-start justify-between">
             <p className="text-center w-full">
-              <span className="text-black font-bold">height:</span>
+              <span className=" font-bold">height:</span>
               {pokemonData.height}
             </p>
           </div>
           <div className="flex items-start justify-between w-full">
             <p className="text-center w-full">
-              <span className="text-black font-bold">weight:</span>
+              <span className=" font-bold">weight:</span>
               {pokemonData.weight}
             </p>
           </div>
           <div className="flex items-start justify-between w-full">
             <p className="text-center w-full">
-              <span className="text-black font-bold">speed:</span>
+              <span className=" font-bold">speed:</span>
               {pokemonData.stats[5].base_stat}
             </p>
           </div>
@@ -42,11 +43,11 @@ export default function Card({ pokemonData }) {
         <div className="flex items-center justify-between w-full gap-x-3 px-2 py-1 mx-auto">
           <div className="flex flex-col items-start justify-between">
             <p>{pokemonData.base_experience}</p>
-            <span className="text-black font-bold">experience</span>
+            <span className=" font-bold">experience</span>
           </div>
           <div className="flex flex-col items-start justify-between">
             <p>{pokemonData.stats[1].base_stat}</p>
-            <span className="text-black font-bold">Attack</span>
+            <span className=" font-bold">Attack</span>
           </div>
           <div className="flex flex-col items-start justify-between">
             <p>
@@ -55,7 +56,7 @@ export default function Card({ pokemonData }) {
                 .slice(0, 1)
                 .join(", ")}
             </p>
-            <span className="text-black font-bold">Abilitites:</span>
+            <span className="font-bold">Abilitites:</span>
           </div>
         </div>
       </div>

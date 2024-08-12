@@ -25,19 +25,19 @@ export default function Input({pokemon,setData}) {
 
    
   return (
-    <div className="w-full h-full mt-10 flex flex-col items-center justify-center">
+    <div className="w-full h-full mt-10 flex flex-col bg-gray-800 items-center justify-center">
       <input
         type="text"
         value={inputValue}
         onChange={handleChange}
-        className={`border-b-2  py-2 px-3 focus:outline-none ${
+        className={`border-b-2 text-white py-2 px-3 rounded-lg focus:outline-none ${
           inputValue ? 'border-blue-500' : 'border-gray-300'
         }`}
         placeholder="Type something..."
       />
       <button
         onClick={clearInput}
-        className="mt-2 bg-red-500  hover:bg-red-700 text-white font-bold py-1 px-4 rounded"
+        className="mt-2 bg-green-600  hover:bg-green-800 text-white font-bold py-1 px-4 rounded"
       >
         Clear
       </button>
