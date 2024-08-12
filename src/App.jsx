@@ -2,13 +2,13 @@ import Header from "./components/Header";
 
 import Loading from "./components/Loading";
 import Item from "./components/Item";
+import Nothing from './components/Nothing'
 import { useState, useEffect } from "react";
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
 
   const API = "https://pokeapi.co/api/v2/pokemon?limit=124";
 
@@ -26,8 +26,6 @@ function App() {
     item.name.toLowerCase().includes(inputValue.toLowerCase())
   );
 
-  
-
   const fetchDate = async () => {
     try {
       const res = await fetch(API);
@@ -43,7 +41,6 @@ function App() {
 
       setPokemon(detailResponse);
       setLoading(false);
-
     } catch (error) {
       console.log(error);
       setError(error);
@@ -57,7 +54,12 @@ function App() {
     fetchDate();
   }, []);
 
-  if (loading) return <div><Loading/></div>;
+  if (loading)
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   if (error) return <div>Error: {error.message}</div>;
 
   return (
@@ -80,7 +82,7 @@ function App() {
           Clear
         </button>
       </div>
-      <Item pokemon={searchData} />
+      {searchData.length > 0 ? <div> <Item pokemon={searchData} /></div> : <div><Nothing/></div>}
     </div>
   );
 }
