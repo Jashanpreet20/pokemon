@@ -13,7 +13,7 @@ export default function Card({ pokemonData }) {
 
       <div className="flex flex-col justify-center items-center  w-full">
         <h1 className="text-xl text-black ">{pokemonData.name}</h1>
-        <p className="bg-green-500 px-2 py-1 mt-2 rounded-md text-center">
+        <p className="bg-green-500 capitalize px-2 py-1 mt-2 rounded-md text-center">
           {pokemonData.types.map((currtype) => currtype.type.name).join(", ")}
         </p>
       </div>
