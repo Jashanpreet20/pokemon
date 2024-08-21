@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "./Context/ThemeProvider";
 
 export default function Card({ pokemonData }) {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="w-full h-full flex flex-col items-start justify-between  px-2 py-2 bg-gray-800
-     text-white p-6 rounded-lg shadow-lg hover:scale-105 duration-200 transition-all">
+    <div
+      className={`w-full h-full flex flex-col items-start justify-between  px-2 py-2
+      ${theme === 'dark' ? "bg-gray-800 text-white" : "text-black bg-white"}
+     p-6 rounded-lg shadow-lg hover:scale-105 duration-200 transition-all`}
+    >
       <div className="flex items-center justify-center w-full ">
         <img
           className="w-[100px] h-[100px] mt-2"
@@ -14,7 +19,11 @@ export default function Card({ pokemonData }) {
 
       <div className="flex flex-col justify-center items-center  w-full">
         <h1 className="text-xl ">{pokemonData.name}</h1>
-        <p className="bg-green-500 capitalize px-2 py-1 mt-2 rounded-md text-center">
+        <p className={`bg-green-500 capitalize px-2 py-1 mt-2 rounded-md text-center ${
+            theme === "dark"
+              ? "bg-blue-500 text-white hover:bg-blue-900-700"
+              : "bg-green-500 hover:bg-green-800 text-black"
+          }`}>
           {pokemonData.types.map((currtype) => currtype.type.name).join(", ")}
         </p>
       </div>
