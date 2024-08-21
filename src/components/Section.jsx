@@ -89,7 +89,7 @@ export default function Section() {
         />
         <button
           onClick={clearInput}
-          className={`mt-2  py-1 px-4 rounded font-semibold
+          className={`mt-2  py-1 px-4 rounded font-bold
           ${
             theme === "dark"
               ? "bg-blue-500 text-white hover:bg-blue-900-700 "
