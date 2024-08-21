@@ -19,7 +19,7 @@ export default function Card({ pokemonData }) {
 
       <div className="flex flex-col justify-center items-center  w-full">
         <h1 className="text-xl ">{pokemonData.name}</h1>
-        <p className={`bg-green-500 capitalize px-2 py-1 mt-2 rounded-md text-center ${
+        <p className={`capitalize px-2 py-1 mt-2 rounded-md text-center ${
             theme === "dark"
               ? "bg-blue-500 text-white hover:bg-blue-900-700"
               : "bg-green-500 hover:bg-green-800 text-black"
