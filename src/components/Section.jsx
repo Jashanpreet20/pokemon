@@ -68,7 +68,7 @@ export default function Section() {
 
   return (
     <div
-      className={` w-full max-h-full ${
+      className={` w-full min-h-screen ${
         theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-300 text-black"
       }`}
     >
